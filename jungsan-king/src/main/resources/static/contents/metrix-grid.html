@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<thead>
+	<tr>
+		<th rowspan=2 style="width:10%">Item</th>
+		<td rowspan=2 style="width:10%">Cost</td>
+		{{#each metrixRowList}}
+		<td id="{{memberId}}" data-obj="memberName" colspan=3 style="width:10%">{{memberName}}</td>
+		<td data-obj="payment" style="display:none;">{{payment}}</td>
+		{{/each}}
+	</tr>
+	<tr>
+		{{#each metrixRowList}}
+		<td style="padding:8px 5px 8px 5px">여부</td><td style="padding:8px 5px 8px 5px" colspan=2>직접입력</td>
+		{{/each}}
+	</tr>
+</thead>
+<tbody>
+</tbody>

@@ -1,21 +1,21 @@
 <div class="panel">
 	<div class="row">
 		<div class="small-12 columns">
-			<span class="label">Expenses Items</span>
+			<span class="label">Members</span>
 			<ul class="button-group radius right">
-				<li><div role="button" id="btnAddExpItem"
+				<li><div role="button" id="btnAddMember"
 					class="button tiny">
 					Add</div></li>
-				<li><div role="button" id="btnModExpItem"
+				<li><div role="button" id="btnModMember"
 					class="button tiny secondary">Modify</div></li>
-				<li><div role="button" id="btnDelExpItem"
+				<li><div role="button" id="btnDelMember"
 					class="button tiny secondary">Delete</div></li>
 			</ul>
 		</div>
 	</div>
 	<div class="row" style="max-height: 500px;overflow: hidden;position: relative;">
 		<div class="small-12 columns" style="margin-bottom: 20px;overflow: auto;height: 300px;">
-			<table class="display" id="gridExpItem" style="width:100%">
+			<table class="display" id="gridMembers" style="width:100%">
 			    <thead>
 			    <tr>
 			        {{#each tableheaders}}
@@ -25,9 +25,9 @@
 			    </thead>
 			    <tbody>
 			    {{#each tabledatas}}
-			    <tr data-obj="item" id="{{itemId}}">
-			        <td data-obj="itemName">{{itemName}}</td>
-			        <td data-obj="cost" data-role="cash">{{cost}}</td>
+			    <tr data-obj="member" id="{{memberId}}">
+			        <td data-obj="memberName">{{memberName}}</td>
+			        <td data-obj="payment" data-role="cash">{{payment}}</td>
 			    </tr>
 			    {{/each}}
 			    </tbody>
@@ -38,7 +38,7 @@
 		<div class="small-12 columns">
 			<ul class="button-group radius right">
 				<li><span>Total : </span></li>
-				<li><div data-obj="expItemsTot">{{totalCost}}</div></li>
+				<li><div data-obj="membersTot">{{totalPayment}}</div></li>
 			</ul>
 		</div>
 	</div>

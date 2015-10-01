@@ -29,6 +29,9 @@
 	            $(opt.target).after(elem.el);
 	        } else if (opt.position == "append") {
 	            $(opt.target).append(elem.el);
+	        } else if (opt.position == "replace"){
+	        	$("#"+opt.id).remove();
+	        	$(opt.target).html(elem.el);
 	        }
     	}
         

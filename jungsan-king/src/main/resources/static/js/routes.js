@@ -4,7 +4,8 @@ $(function(){
         routes: {
         	""				: page.Trips.initPage,
         	"trips"			: page.Trips.initPage,
-        	"trips/:tripId"	: page.Trips.initDetailPage
+        	"trips/:tripId"	: page.Trips.initDetailPage,
+        	"trips/:tripId/metrix"	: function(){}
             
         },
 

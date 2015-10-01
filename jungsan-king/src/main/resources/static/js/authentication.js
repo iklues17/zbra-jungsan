@@ -200,71 +200,31 @@ comm.initPage = function () {
 	var hash = window.location.hash.replace(/#/,"");
 	
 	var movePage = true;
-	if(!comm.isLogedin){
-		if(!(window.location.hash === "" || window.location.hash.startsWith("#log") || window.location.hash.startsWith("#sign") || window.location.hash.startsWith("#track"))){
-			window.location.hash = ""; // login page
-			movePage = false;
-		}
-	}
-//	if(window.location.hash !== ""
-//		&& !window.location.hash.startsWith("#log")
-//		&& !window.location.hash.startsWith("#sign")
-//		&& !window.location.hash.startsWith("#my")){
-//		if(comm.isAdmin){
-//			if(!window.location.hash.startsWith("#admin")){
-//				alert("관리자 권한이 없습니다.");
-//				return false;
-//			}
-//		}else{
-//			
+//	if(!comm.isLogedin){
+//		if(!(window.location.hash === "" || window.location.hash.startsWith("#log") || window.location.hash.startsWith("#sign") || window.location.hash.startsWith("#track"))){
+//			window.location.hash = ""; // login page
+//			movePage = false;
 //		}
 //	}
 	
     $(".top-bar-section > ul.left > li").removeClass('active');
     $(".top-bar-section > ul.right > li").removeClass('active');
     
-//	admin booking 메뉴 제거    
-//    if (location.hash.startsWith('#booking')) {
-//    	$(".top-bar-section > ul.left > li").eq(1).addClass('active');
-//    } 
-    if (location.hash.startsWith('#admin/dashboard') ||
-    		location.hash.startsWith('#admin/detail')) {
+    if (hash.startsWith('trips')) {
     	$(".top-bar-section > ul.left > li").eq(0).addClass('active');
-    } else if (location.hash.startsWith('#admin/track')) {
-    	$(".top-bar-section > ul.left > li").eq(1).addClass('active');
-    } else if (location.hash.startsWith('#admin/about')) {
-    	$(".top-bar-section > ul.left > li").eq(2).addClass('active');
-    } else if (location.hash.startsWith('#admin/world-map')) {
-    	$(".top-bar-section > ul.left > li").eq(3).addClass('active');
-    }
-    
-    //public page
-    else if (location.hash.startsWith('#dashboard') ||
-    		location.hash.startsWith('#detail')) {
-    	$(".top-bar-section > ul.left > li").eq(0).addClass('active');
-    } else if (location.hash.startsWith('#booking')) {
-    	$(".top-bar-section > ul.left > li").eq(1).addClass('active');
-    } else if (location.hash.startsWith('#track')) {
-    	if(comm.isLogedin){
-    		$(".top-bar-section > ul.left > li").eq(2).addClass('active');
-    	}else{
-    		$(".top-bar-section > ul.left > li").eq(0).addClass('active');
-    	}
-    } else if (location.hash.startsWith('#about')) {
-    	$(".top-bar-section > ul.left > li").eq(3).addClass('active');
     }
     
     // Top Right Bar - login state
-    else if (location.hash.match("my-page") !== null ) {
+    else if (hash.match("my-page") !== null ) {
     	$(".top-bar-section > ul.right > li").eq(0).addClass('active');
-    } else if (location.hash.startsWith("#logout")) {
+    } else if (hash.startsWith("logout")) {
     	$(".top-bar-section > ul.right > li").eq(1).addClass('active');
     }
     // Top Rigth Bar - logout state
-    else if (location.hash.startsWith('#login')) {
+    else if (hash.startsWith('login')) {
     	$(".top-bar-section > ul.right > li").eq(0).addClass('active');
     }
-    else if (location.hash.startsWith('#signup')) {
+    else if (hash.startsWith('signup')) {
     	$(".top-bar-section > ul.right > li").eq(1).addClass('active');
     } else {
     	$(".top-bar-section > ul.right > li").eq(0).addClass('active');

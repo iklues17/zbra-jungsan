@@ -1,3 +1,33 @@
+@import "../webjars/foundation/5.5.2/scss/foundation.scss";
+#section {
+    margin: 12px;
+    min-height: calc(100% - 195px);
+}
+#gridJskMetrix {
+	width: 100%;
+}
+
+footer {
+    margin: 21px;
+}
+
+caption {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    float:left;
+    font-weight: bold;
+}
+
+
+/* Grid */
+.recode-active {
+	background-color: palegoldenrod !important;
+}
+.recode-selected {
+	background-color: moccasin !important;
+}
+
+
 .label {
 	font-size: 1rem;
 }
@@ -58,37 +88,6 @@ td > input {
 	margin: 0px !important;
 }
 
-.cargo-box {
-	border-radius: 0.5rem;
-	margin-bottom: 1.25rem;
-	padding: 1.25rem;
-	background-color: ghostwhite;
-}
-
-.cargo-box.not-approval {
-	color: honeydew;
-	background-color: darkgray;
-}
-
-.cargo-box.not-shipping {
-	background-color: gold;
-}
-
-.cargo-box.misrouted {
-	color: honeydew;
-	background-color: orangered;
-}
-
-.cargo-box.shipping {
-	background-color: skyblue;
-}
-
-.cargo-box.completed {
-	color: honeydew;
-	background-color: #0080ff;
-}
-
-
 .top-bar .title-area {
 	padding-left: 10px;
 }
@@ -125,34 +124,16 @@ td > input {
 	}
 }
 
-[aria-hidden="true"]{
-	display: none;
+.row {
+  max-width: 77.5rem;
 }
 
-[aria-cargo-events-empty="false"]{
-	display: none;
-}
 
-[aria-cargo-misdirected="false"]{
-	display: none;
+/*Grid*/
+table>tbody>tr>td{
+	padding: 4px 5px 4px 5px;
 }
-
-[aria-cargo-routed="false"]{
-	display: none;
-}
-
-[aria-cargo-not-routed="false"]{
-	display: none;
-}
-
-[aria-cargo-misrouted="false"]{
-	display: none;
-}
-
-[aria-route-candidates-empty="false"]{
-	display: none;
-}
-
-[aria-route-candidates="false"]{
-	display: none;
+table>tbody>tr>td>input{
+	padding: 4px 4px 4px 4px !important;
+	height: 1.625rem !important;
 }

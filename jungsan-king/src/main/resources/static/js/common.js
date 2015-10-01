@@ -37,7 +37,7 @@ $(document).ready(function(){
 	}
     page.MenuTop.init();
 });
-
+$(document).foundation('tab', 'reflow');
 $(document).foundation({
 	offcanvas : {
 		// Sets method in which offcanvas opens.
@@ -134,7 +134,7 @@ comm.openModalForInformMsg = function(normalMsg){
 	$('#myModal').foundation('reveal', 'open');
 };
 
-comm.openModalForEntry = function(html, data, callback){
+comm.openModalForEntry = function(viewmode, html, data, callback){
 	var entryForm = "";
 	$('body').find("#myModal").remove();
 	$('body').append('<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">'
@@ -143,9 +143,11 @@ comm.openModalForEntry = function(html, data, callback){
 			+'<a class="close-reveal-modal" aria-label="Close">&#215;</a>'
 			+ '</div>');
 	$('#myModal').foundation('reveal', 'open');
-	modalFnInit(data);
+	
+	modalFnInit(viewmode, data);
+	
 	$("#myModal > #btnDone").on('click', function(e){
-		var rtnData = $("#myModal").find('form').serialize();
+		var rtnData = modalFnGetData();
 		callback(rtnData);
 	});
 };
@@ -156,6 +158,10 @@ comm.closeModal = function(){
 
 comm.addComma = function(value){
 	return Number(value).toLocaleString('en');
+};
+
+comm.removeComma = function(value){
+	return value.replace(/,/gi, '');
 };
 
 comm.queryStringToJson = function(queryString){
@@ -180,3 +186,15 @@ comm.isFunction = function(value) {return typeof value === 'function';};
 comm.isStringNumber = function(num){
 	return  /^-?\d+\.?\d*$/.test(num.replace(/["']/g, ''));
 };
+
+comm.installGrid = function($target){
+	var listCash = $target.find('[data-role="cash"]');
+	$.each(listCash, function(idx){
+		var value = $(this).text();
+		value = value.replace(/,/gi, '');
+		if (isNaN(value) || value == "") {    // 숫자 형태의 값이 정상적으로 입력되었는지 확인합니다.
+			value = value.substring(0,value.length-1);
+		}
+		$(this).text(comm.addComma(value));
+	});
+}
