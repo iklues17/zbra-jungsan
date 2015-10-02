@@ -6,9 +6,11 @@
 			payment: 0,
 			totalAmount: 0,
 			itemMapping: [{
-				itemId:"",
-				itemName:"",
-				cost: 0,
+				item: {
+					itemId:"",
+					itemName:"",
+					cost: 0
+				},
 				isPay: boolean,
 				isUserInput: boolean,
 				amount: 0
