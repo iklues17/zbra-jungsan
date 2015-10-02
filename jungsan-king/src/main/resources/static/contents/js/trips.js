@@ -80,11 +80,11 @@ page.Trips = (function(){
 		getMembers: function(tripId){
 			// TODO call rest api /trips/{tripId}/members
 			var data = {
-				totalPayment: 879900,	
+				totalPayment: 999900,	
 				members: [{
 					memberId: "1",
 					memberName: "슬기",
-					payment: "726900"
+					payment: "846900"
 				},{
 					memberId: "2",
 					memberName: "원기",
@@ -186,7 +186,7 @@ page.Trips = (function(){
 		getItems: function(tripId){
 			// TODO call rest api /trips/{tripId}/items
 			var data = {
-				totalCost: 879900,	
+				totalCost: 999900,	
 				items: [{
 					itemId: "1",
 					itemName: "일)대여",
@@ -271,6 +271,14 @@ page.Trips = (function(){
 					itemId: "21",
 					itemName: "유류비",
 					cost: "200000" // 슬기, 재관, 원기(.5), 정섭, 은경, 광록 
+				},{
+					itemId: "22",
+					itemName: "일)숙박",
+					cost: "60000" // 슬기, 원기, 정섭, 은경, 광록 
+				},{
+					itemId: "23",
+					itemName: "월)숙박",
+					cost: "60000" // 슬기, 재관, 정섭, 은경, 광록 
 				}]
 			};
 			return data;
