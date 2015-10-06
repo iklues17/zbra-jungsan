@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.hohans</groupId>
-	<artifactId>jungsan-king</artifactId>
+	<artifactId>nsome-jungsan</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>jungsan-king</name>
+	<name>nsome-jungsan</name>
 	<description>Calculate trip expenses</description>
 
 	<parent>
@@ -36,44 +36,25 @@
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.hohans</groupId>
+			<artifactId>nsome-domain</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
 		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.mockito</groupId> -->
-<!-- 			<artifactId>mockito-core</artifactId> -->
-<!-- 			<version>1.9.5</version> -->
-<!-- 			<scope>test</scope> -->
-<!-- 		</dependency> -->
-		
 		<dependency>
-		    <groupId>org.webjars</groupId>
-		    <artifactId>backbonejs</artifactId>
-		    <version>1.2.1</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-integration</artifactId>
 		</dependency>
 		<dependency>
-    		<groupId>org.webjars</groupId>
-    		<artifactId>jquery</artifactId>
-    		<version>2.1.4</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.webjars</groupId>
-		    <artifactId>underscorejs</artifactId>
-		    <version>1.8.3</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.webjars</groupId>
-		    <artifactId>foundation</artifactId>
-		    <version>5.5.2</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.webjars</groupId>
-		    <artifactId>foundation-icon-fonts</artifactId>
-		    <version>d596a3cfb3</version>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-client</artifactId>
 		</dependency>
 	</dependencies>
 	
